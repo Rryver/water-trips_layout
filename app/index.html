@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+</header>
+
+
+<div class="wrapper">
+  <main class="main">
+    <section class="trips">
+      <div class="container">
+        <ul class="trips__list">
+          <li class="trips__trip trip">
+            <div class="trip__preview">
+              <img class="trip__image" src="images/trip_sankt-peterburg-piter-st-3495.jpg" alt="trip-image">
+              <span class="trip__status">Новинка</span>
+            </div>
+            <div class="trip__content">
+              <div class="trip__header">
+                <div class="trip__duration">
+                  <img class="trip__duration-icon" src="images/icons/clock-circular-outline.svg" alt="">
+                  <span class="trip__duration-text">2 часа</span>
+                </div>
+                <h3 class="trip__title">
+                  <span class="trip__promotion text-title">АКЦИЯ - </span>
+                  <span class="trip__name">Обзорная экскурсия по рекам и каналам  с остановками Hop on Hop Off 2019</span>
+                </h3>
+              </div>
+              <div class="trip__info info">
+                <ul class="info__list">
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <span class="info__text">Билет на целый день</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <span class="info__text">Неограниченное число катаний</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                      <span class="info__text">6 остановок у главных достопримечательностей</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <div class="info__schedule schedule">
+                      <span class="info__text">Ближайший рейс сегодня</span>
+                      <ul class="schedule__list">
+                        <li class="schedule__item qweqwe"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_show-more schedule__item_show-more_active">
+                          <button class="schedule__button schedule__button_show-more" onclick="scheduleShowMore(this)">еще...</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="trip__price-content price-content">
+                <div class="price-content__price">
+                  <span class="price-content__price-main">900
+                    <img class="price-content__price-icon" src="images/icons/ruble-currency-sign.jpg" alt=""></span>
+                  <span class="price-content__price-additional">1200 р на причале</span>
+                </div>
+                <button class="price-content__button">Подробнее</button>
+              </div>
+            </div>
+          </li>
+
+          <li class="trips__trip trip">
+            <div class="trip__preview">
+              <img class="trip__image" src="images/trip_sankt-peterburg-piter-st-3495.jpg" alt="trip-image">
+              <span class="trip__status">Новинка</span>
+            </div>
+            <div class="trip__content">
+              <div class="trip__header">
+                <div class="trip__duration">
+                  <img class="trip__duration-icon" src="images/icons/clock-circular-outline.svg" alt="">
+                  <span class="trip__duration-text">2 часа</span>
+                </div>
+                <h3 class="trip__title">
+                  <span class="trip__promotion text-title">АКЦИЯ - </span>
+                  <span class="trip__name">Обзорная экскурсия по рекам и каналам  с остановками Hop on Hop Off 2019</span>
+                </h3>
+              </div>
+              <div class="trip__info info">
+                <ul class="info__list">
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <span class="info__text">Билет на целый день</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <span class="info__text">Неограниченное число катаний</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                      <span class="info__text">6 остановок у главных достопримечательностей</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <div class="info__schedule schedule">
+                      <span class="info__text">Ближайший рейс сегодня</span>
+                      <ul class="schedule__list">
+                        <li class="schedule__item"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_show-more schedule__item_show-more_active">
+                          <button class="schedule__button schedule__button_show-more" onclick="scheduleShowMore(this)">еще...</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="trip__price-content price-content">
+                <div class="price-content__price">
+                  <span class="price-content__price-main">2900
+                    <img class="price-content__price-icon" src="images/icons/ruble-currency-sign.jpg" alt=""></span>
+                  <span class="price-content__price-additional">1200 р на причале dmfklsfsdfl</span>
+                </div>
+                <button class="price-content__button">Подробнее</button>
+              </div>
+            </div>
+          </li>
+
+          <li class="trips__trip trip">
+            <div class="trip__preview">
+              <img class="trip__image" src="images/trip_AdobeStock_168443825%201.jpg" alt="trip-image">
+              <span class="trip__status">Новинка</span>
+            </div>
+            <div class="trip__content">
+              <div class="trip__header">
+                <div class="trip__duration">
+                  <img class="trip__duration-icon" src="images/icons/clock-circular-outline.svg" alt="">
+                  <span class="trip__duration-text">2 часа</span>
+                </div>
+                <h3 class="trip__title">
+                  <span class="trip__promotion text-title">АКЦИЯ - </span>
+                  <span class="trip__name">Обзорная экскурсия по рекам и каналам  с остановками Hop on Hop Off 2019</span>
+                </h3>
+              </div>
+              <div class="trip__info info">
+                <ul class="info__list">
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <span class="info__text">Билет на целый день</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <span class="info__text">Неограниченное число катаний</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                      <span class="info__text">6 остановок у главных достопримечательностей</span>
+                  </li>
+                  <li class="info__item">
+                    <img class="info__icon" src="images/icons/check-mark.svg" alt="">
+                    <div class="info__schedule schedule">
+                      <span class="info__text">Ближайший рейс сегодня</span>
+                      <ul class="schedule__list">
+                        <li class="schedule__item"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden"><button class="schedule__button">12:00</button></li>
+                        <li class="schedule__item schedule__item_hidden schedule__item_show-more">
+                          <button class="schedule__button schedule__button_show-more" onclick="scheduleShowMore(this)">еще...</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="trip__price-content price-content">
+                <div class="price-content__price">
+                  <span class="price-content__price-main">2900
+                    <img class="price-content__price-icon" src="images/icons/ruble-currency-sign.jpg" alt=""></span>
+                  <span class="price-content__price-additional">1200 р на причале dmfklsfsdfl</span>
+                </div>
+                <button class="price-content__button">Подробнее</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer"></footer>
+</div>
+
+
+<script src="js/main.min.js"></script>
+</body>
+
+</html>
