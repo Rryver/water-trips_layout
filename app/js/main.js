@@ -17,37 +17,46 @@ window.onload = scheduleCheckWidth();
 function scheduleCheckWidth() {
     let trips = document.getElementsByClassName("trip");
     let scheduleWidth = document.querySelector(".schedule__list").scrollWidth;
-    let scheduledItem = document.querySelector(".schedule__item");
-    let scheduledItemWidth = scheduledItem.offsetWidth + parseInt(getComputedStyle(scheduledItem).getPropertyValue("margin-right"));
+    let scheduleItem = document.querySelector(".schedule__item");
+    let scheduleItemWidth = scheduleItem.offsetWidth + parseInt(getComputedStyle(scheduleItem).getPropertyValue("margin-right"));
 
 
     console.log(scheduleWidth);
-    console.log(scheduledItemWidth);
-    console.log(scheduleWidth / scheduledItemWidth);
+    console.log(scheduleItemWidth);
+    console.log(scheduleWidth / scheduleItemWidth);
 
 
-
-
-    let infoItem = document.querySelector(".info__item");
-    console.log(infoItem);
-    console.log(infoItem.offsetWidth);
-
-
+    let infoItemWidth = document.querySelector(".info__item").offsetWidth;
+    console.log("infoItem width = " + infoItemWidth);
 
     let iconItem = document.querySelector(".info__icon");
-    console.log(iconItem);
-    console.log(iconItem.naturalWidth);
-    let iconItemWidth = document.querySelector(".info__icon");
+    let iconItemWidth = iconItem.naturalWidth + parseInt(getComputedStyle(iconItem).getPropertyValue("margin-right"));
+    console.log("IconItemWidht = " + iconItemWidth);
 
+    let availiableWidth = infoItemWidth - iconItemWidth;
+    console.log("availeableWidth = " + availiableWidth);
+    let availiableItemsCount = parseInt(availiableWidth / scheduleItemWidth);
+    console.log("count = " + availiableItemsCount);
 
 
     [...trips].forEach(
         (trip) => {
-            let scheduledItems = trip.getElementsByClassName("schedule__item");
+            let scheduleItems = trip.getElementsByClassName("schedule__item");
 
-            for (let i = 0; i < scheduledItems.length; i++) {
+            console.log(scheduleItems.length);
 
+            if (availiableItemsCount > scheduleItems.length) {
+                setItemsVisibility(scheduleItems, availiableItemsCount - 1);
+                scheduleItems.querySelector(".schedule__item_show-more");
+            } else {
+                setItemsVisibility(scheduleItems, availiableItemsCount);
             }
         }
     );
+}
+
+function setItemsVisibility(array, count) {
+    for (let i = 0; i < count; i++) {
+        array.item(i).classList.remove("schedule__item_hidden");
+    }
 }
