@@ -3,7 +3,6 @@ function scheduleShowMore(btn) {
 
     [...items].forEach(
         (element) => {
-            console.log(element);
             element.classList.remove("schedule__item_hidden");
         }
     );
@@ -12,47 +11,39 @@ function scheduleShowMore(btn) {
 }
 
 
-window.onload = scheduleCheckWidth();
 
-function scheduleCheckWidth() {
-    let trips = document.getElementsByClassName("trip");
-    let scheduleWidth = document.querySelector(".schedule__list").scrollWidth;
+window.onload = setupScheduleList();
+
+//contain flights in one row (hide extra flights)
+function setupScheduleList() {
     let scheduleItem = document.querySelector(".schedule__item");
-    let scheduleItemWidth = scheduleItem.offsetWidth + parseInt(getComputedStyle(scheduleItem).getPropertyValue("margin-right"));
+    let scheduleItemWidth = scheduleItem.offsetWidth +
+        parseInt(getComputedStyle(scheduleItem).getPropertyValue("margin-right"));
+    let availiableItemsCount = parseInt(getAvailableWidth() / (scheduleItemWidth + 10)); // + 10 - extra 10px for text in button "more"
 
-
-    console.log(scheduleWidth);
-    console.log(scheduleItemWidth);
-    console.log(scheduleWidth / scheduleItemWidth);
-
-
-    let infoItemWidth = document.querySelector(".info__item").offsetWidth;
-    console.log("infoItem width = " + infoItemWidth);
-
-    let iconItem = document.querySelector(".info__icon");
-    let iconItemWidth = iconItem.naturalWidth + parseInt(getComputedStyle(iconItem).getPropertyValue("margin-right"));
-    console.log("IconItemWidht = " + iconItemWidth);
-
-    let availiableWidth = infoItemWidth - iconItemWidth;
-    console.log("availeableWidth = " + availiableWidth);
-    let availiableItemsCount = parseInt(availiableWidth / scheduleItemWidth);
-    console.log("count = " + availiableItemsCount);
-
-
+    let trips = document.getElementsByClassName("trip");
     [...trips].forEach(
         (trip) => {
             let scheduleItems = trip.getElementsByClassName("schedule__item");
 
-            console.log(scheduleItems.length);
-
-            if (availiableItemsCount > scheduleItems.length) {
+            if (availiableItemsCount < scheduleItems.length) {
                 setItemsVisibility(scheduleItems, availiableItemsCount - 1);
-                scheduleItems.querySelector(".schedule__item_show-more");
+                trip.querySelector(".schedule__item_show-more").classList.remove("schedule__item_hidden");
             } else {
-                setItemsVisibility(scheduleItems, availiableItemsCount);
+                setItemsVisibility(scheduleItems, scheduleItems.length - 1);
             }
         }
     );
+}
+
+function getAvailableWidth() {
+    let infoItemWidth = document.querySelector(".info__item").offsetWidth;
+    let iconItem = document.querySelector(".info__icon");
+    let iconItemWidth = iconItem.naturalWidth +
+        parseInt(getComputedStyle(iconItem).getPropertyValue("margin-right"));
+    let scheduleList = document.querySelector(".schedule__list");
+
+    return infoItemWidth - iconItemWidth;
 }
 
 function setItemsVisibility(array, count) {
@@ -60,3 +51,4 @@ function setItemsVisibility(array, count) {
         array.item(i).classList.remove("schedule__item_hidden");
     }
 }
+
