@@ -1,2 +1,7 @@
 # water-trips_layout
-web-practice
+
+### used: html, css, js, gulp, less
+
+figma: https://www.figma.com/file/maSjC7kLVRVxDqARDP0aD2/Layout-test-task-Copy
+
+Адаптивный блок.
