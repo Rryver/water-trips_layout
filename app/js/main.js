@@ -1,3 +1,6 @@
+/*
+* Показать скрытые элементы расписания
+* */
 function scheduleShowMore(btn) {
     let items = btn.parentElement.parentElement.getElementsByClassName("schedule__item");
 
@@ -11,10 +14,11 @@ function scheduleShowMore(btn) {
 }
 
 
-
+/*
+* Если времен больше чем на 1 строчку, то в конце строчки появляется
+* кнопка "ещё..." при нажатии на которую раскрываются скрытые времена.
+* */
 window.onload = setupScheduleList();
-
-//contain flights in one row (hide extra flights)
 function setupScheduleList() {
     let scheduleItem = document.querySelector(".schedule__item");
     let scheduleItemWidth = scheduleItem.offsetWidth +
@@ -36,6 +40,9 @@ function setupScheduleList() {
     );
 }
 
+/*
+* Возвращает доступное для заполенния место
+*  */
 function getAvailableWidth() {
     let infoItemWidth = document.querySelector(".info__item").offsetWidth;
     let iconItem = document.querySelector(".info__icon");
@@ -46,6 +53,11 @@ function getAvailableWidth() {
     return infoItemWidth - iconItemWidth;
 }
 
+/*
+* Удаление класса, скрывающего элементы
+* array - коллекция html элементов
+* count - количество элементов, начиная с 1ого, у которых необходимо убрать скрывающий класс
+* */
 function setItemsVisibility(array, count) {
     for (let i = 0; i < count; i++) {
         array.item(i).classList.remove("schedule__item_hidden");
